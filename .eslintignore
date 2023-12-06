@@ -1,0 +1,12 @@
+node_modules
+.bundle
+.vscode
+.yarn
+
+.bundle
+.eslintrc.js
+.prettierrc.js
+.gitignore
+android
+ios
+vendor

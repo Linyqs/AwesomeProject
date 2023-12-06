@@ -1,15 +1,18 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Button} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-
-export default function Detail({route}) {
-  const {itemId} = route.params;
-
-  return (
-    <View>
-      <Text>Detail Page, come from home: {itemId}</Text>
-      <FontAwesome name={'angle-right'} size={26} />
-      <Text style={{fontFamily: 'iconfont', fontSize: 36}}>&#xe699;</Text>
-    </View>
-  );
+import IconFont from '../../components/common/IconFont';
+export default function Detail({route, navigation}) {
+    const handlePress = navigation.navigate('Home', {
+        itemId: 1,
+    });
+    return (
+        <View>
+            <Text>Detail Page</Text>
+            <FontAwesome name={'angle-right'} size={26} />
+            <IconFont value="&#xe699;" isActive />
+            <IconFont value="&#xe6a0;" />
+            <Button title="Go to detail page" onPress={handlePress} />
+        </View>
+    );
 }
